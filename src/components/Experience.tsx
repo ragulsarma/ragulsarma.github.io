@@ -1,6 +1,5 @@
 import { Section } from "./Section";
-import { Card } from "@/components/ui/card";
-import { Briefcase, Calendar } from "lucide-react";
+import { Calendar, TrendingUp } from "lucide-react";
 
 const experiences = [
   {
@@ -70,57 +69,62 @@ const experiences = [
 
 export const Experience = () => {
   return (
-    <Section id="experience" subtitle="My Journey" title="Work Experience">
-      <div className="relative">
-        {/* Timeline Line */}
-        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-border"></div>
-
-        <div className="space-y-12">
-          {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className={`relative animate-fade-in`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="md:flex md:justify-between md:gap-12">
-                {/* Left side (odd items) or Right side (even items) */}
-                <div
-                  className={`md:w-1/2 ${
-                    index % 2 === 0 ? "md:text-right md:pr-12" : "md:order-2 md:pl-12"
-                  }`}
-                >
-                  <Card className="p-6 card-glow bg-card border-border">
-                    <div className="flex items-start gap-3 mb-3">
-                      <Briefcase className="text-primary mt-1 flex-shrink-0" size={20} />
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold mb-1">{exp.title}</h3>
-                        <p className="text-primary font-medium mb-2">{exp.company}</p>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                          <Calendar size={14} />
-                          <span>{exp.period}</span>
-                        </div>
-                        <ul className="space-y-2 text-sm text-foreground/80">
-                          {exp.description.map((item, i) => (
-                            <li key={i} className="flex items-start gap-2">
-                              <span className="text-primary mt-1">•</span>
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </Card>
-                </div>
-
-                {/* Timeline Dot */}
-                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
-
-                {/* Spacer for alternating layout */}
-                <div className="hidden md:block md:w-1/2"></div>
+    <Section id="experience" title="Work Experience" subtitle="MY JOURNEY">
+      {/* Decorative timeline line */}
+      <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent hidden lg:block"></div>
+      
+      <div className="relative space-y-12">
+        {experiences.map((exp, index) => (
+          <div
+            key={index}
+            className={`relative animate-fade-in ${
+              index % 2 === 0 ? 'lg:pr-[50%] lg:text-right' : 'lg:pl-[50%] lg:ml-8'
+            }`}
+            style={{ animationDelay: `${index * 0.15}s` }}
+          >
+            {/* Timeline dot */}
+            <div className="hidden lg:block absolute top-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="relative">
+                <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-75"></div>
+                <div className="relative w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
               </div>
             </div>
-          ))}
-        </div>
+
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
+              <div className="relative bg-card/80 backdrop-blur-sm border border-border rounded-lg p-8 card-glow overflow-hidden">
+                {/* Decorative corner */}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full"></div>
+                
+                <div className="relative">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+                    <div className={index % 2 === 0 ? 'lg:text-right' : ''}>
+                      <h3 className="text-2xl font-bold mb-2 group-hover:text-gradient transition-all duration-300">
+                        {exp.title}
+                      </h3>
+                      <p className="text-xl font-semibold text-primary mb-2">{exp.company}</p>
+                      <div className={`inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full ${index % 2 === 0 ? 'lg:float-right' : ''}`}>
+                        <Calendar className="w-4 h-4 text-primary" />
+                        <span className="text-sm font-medium text-primary">{exp.period}</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <ul className={`space-y-3 ${index % 2 === 0 ? 'lg:text-right' : ''}`}>
+                    {exp.description.map((achievement, idx) => (
+                      <li key={idx} className={`flex items-start gap-3 text-muted-foreground group/item hover:text-foreground transition-colors ${index % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}>
+                        <div className="p-1.5 bg-primary/10 rounded group-hover/item:bg-primary/20 transition-colors">
+                          <TrendingUp className="w-4 h-4 text-primary flex-shrink-0" />
+                        </div>
+                        <span className="flex-1">{achievement}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </Section>
   );
