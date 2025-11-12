@@ -138,10 +138,11 @@ export const Hero = () => {
                     <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-full blur-md group-hover:blur-lg transition-all"></div>
                     <div className="relative w-64 h-64 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 border-4 border-background flex items-center justify-center overflow-hidden">
                       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(245,185,113,0.1),transparent_70%)]"></div>
-                      <div className="text-center z-10">
-                        <p className="text-6xl font-serif font-bold text-primary mb-2">RN</p>
-                        <p className="text-sm text-muted-foreground">Profile Image</p>
-                      </div>
+                      <img
+                        src="https://i.ibb.co/7trckr7v/IMG-0663.png"
+                        alt="Profile"
+                        className="w-full h-full object-cover rounded-full z-10"
+                      />
                     </div>
                   </div>
 
@@ -152,11 +153,11 @@ export const Hero = () => {
                       <p className="text-xs text-muted-foreground mt-1">Years Exp</p>
                     </div>
                     <div className="text-center border-x border-border">
-                      <p className="text-3xl font-bold text-primary">50+</p>
+                      <p className="text-3xl font-bold text-primary">40+</p>
                       <p className="text-xs text-muted-foreground mt-1">Projects</p>
                     </div>
                     <div className="text-center">
-                      <p className="text-3xl font-bold text-primary">7</p>
+                      <p className="text-3xl font-bold text-primary">5</p>
                       <p className="text-xs text-muted-foreground mt-1">Companies</p>
                     </div>
                   </div>

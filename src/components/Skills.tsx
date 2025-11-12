@@ -4,13 +4,13 @@ import { Brain, Code, Layers, Wrench, Sparkles } from "lucide-react";
 const skillCategories = [
   {
     icon: Brain,
-    title: "AI & ML Skills",
+    title: "AI & Automation Skills",
     skills: [
-      "AI Agent Development",
-      "OpenAI API / LangChain",
-      "LLM Integrations",
-      "Prompt Engineering",
-      "Model Fine-tuning",
+      "AI Agent Development (Lua, LLM-driven workflows)",
+      "LLM Architecture & Tool Orchestration",
+      "Prompt Design & System Instructions",
+      "API Integration & Automation Pipelines",
+      "LangChain / OpenAI API",
     ],
   },
   {
@@ -21,12 +21,24 @@ const skillCategories = [
   {
     icon: Layers,
     title: "Architecture & State",
-    skills: ["BLoC Pattern", "Provider", "MVVM", "Clean Architecture", "Modular Design"],
+    skills: [
+      "BLoC Pattern",
+      "Provider",
+      "MVVM",
+      "Clean Architecture",
+      "Modular Design",
+    ],
   },
   {
     icon: Wrench,
     title: "Tools & Backend",
-    skills: ["Firebase", "REST APIs", "Git", "CI/CD", "Performance Optimization"],
+    skills: [
+      "Firebase",
+      "REST APIs",
+      "Git",
+      "CI/CD",
+      "Performance Optimization",
+    ],
   },
 ];
 
@@ -51,11 +63,11 @@ export const Skills = () => {
             >
               {/* Animated gradient border */}
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-accent to-primary rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-500 animate-gradient-x"></div>
-              
+
               <div className="relative bg-card/90 backdrop-blur-sm border border-border rounded-lg p-8 h-full overflow-hidden">
                 {/* Background glow effect */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors duration-500"></div>
-                
+
                 <div className="relative">
                   {/* Icon header */}
                   <div className="flex items-center gap-4 mb-6">
@@ -69,11 +81,14 @@ export const Skills = () => {
                       {category.title}
                     </h3>
                   </div>
-                  
+
                   {/* Skills list */}
                   <ul className="space-y-2">
                     {category.skills.map((skill, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-foreground/80">
+                      <li
+                        key={i}
+                        className="flex items-center gap-2 text-sm text-foreground/80"
+                      >
                         <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
                         <span>{skill}</span>
                       </li>

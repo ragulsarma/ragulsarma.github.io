@@ -37,7 +37,7 @@ export const About = () => {
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-1">Location</h3>
-                <p className="text-muted-foreground">Tamil Nadu, India</p>
+                <p className="text-muted-foreground">Chennai, India</p>
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@ export const About = () => {
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-1">Interests</h3>
-                <p className="text-muted-foreground">Building products, Open-source, Continuous learning</p>
+                <p className="text-muted-foreground">Frontend architecture, Scalable app design, UI/UX engineering, Developer experience, Product innovation</p>
               </div>
             </div>
           </div>

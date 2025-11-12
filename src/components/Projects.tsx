@@ -2,59 +2,95 @@ import { Section } from "./Section";
 import { ExternalLink, Github, Code } from "lucide-react";
 
 const projects = [
+  // {
+  //   title: "AI Agent Development",
+  //   description:
+  //     "Built experimental AI agents capable of handling automation tasks and interactive workflows using LLMs and APIs.",
+  //   tags: ["AI", "LangChain", "OpenAI", "Python"],
+  //   demo: "#",
+  //   github: "#",
+  // },
+  // {
+  //   title: "Doctor Consult App",
+  //   description:
+  //     "Web application with video consultation features, appointment scheduling, and integrated payment gateway.",
+  //   tags: ["Flutter", "Firebase", "WebRTC", "Payment Integration"],
+  //   demo: "#",
+  //   github: "#",
+  // },
   {
-    title: "AI Agent Development",
+    title: "Tushop Mobile & Web App",
     description:
-      "Built experimental AI agents capable of handling automation tasks and interactive workflows using LLMs and APIs.",
-    tags: ["AI", "LangChain", "OpenAI", "Python"],
-    demo: "#",
-    github: "#",
+      "At Tushop, built and maintained the mobile app (Flutter) and web platform (React.js), optimizing performance and user experience across devices.",
+    tags: ["Flutter", "React", "E-commerce", "Cross-platform"],
+    app: "https://play.google.com/store/apps/details?id=com.tushop.tushop_mobile",
+    web: "https://tushop.io/",
+  },
+
+  {
+    title: "FNOL & Dynamic Form Builder",
+    description:
+      "Developed at XA Group — implemented a fully API-driven dynamic form builder and real-time notification system (SignalR) used in insurance claim workflows.",
+    tags: ["Flutter", "SignalR", "API-driven UI", "Enterprise"],
+    app: "https://apps.apple.com/in/app/addenda-auto/id6736968416",
+    web: "",
   },
   {
-    title: "Doctor Consult App",
+    title: "Nearcast Mobile App",
     description:
-      "Web application with video consultation features, appointment scheduling, and integrated payment gateway.",
-    tags: ["Flutter", "Firebase", "WebRTC", "Payment Integration"],
-    demo: "#",
-    github: "#",
-  },
-  {
-    title: "Uzhavan Online",
-    description:
-      "E-commerce grocery platform with real-time inventory, cart management, and order tracking.",
-    tags: ["Flutter", "REST API", "State Management"],
-    demo: "#",
-    github: "#",
-  },
-  {
-    title: "Betting App",
-    description:
-      "Custom calendar implementation, wallet integration, and responsive navigation for betting platform.",
-    tags: ["Flutter", "Custom UI", "Payment Gateway"],
-    demo: "#",
-    github: "#",
+      "Neighborhood-based social media app built at Nearcast. Contributed to live video streaming, real-time feed interactions, and group chat features.",
+    tags: ["Flutter", "BLoC", "Livestream", "Social Media"],
+    app: "",
+    web: "https://www.nearcast.com/",
   },
   {
     title: "SelfAware (Yoga App)",
     description:
       "Cross-platform wellness app with workout tracking, meditation guides, and progress analytics.",
     tags: ["Flutter", "Firebase", "Analytics"],
-    demo: "#",
-    github: "#",
+    app: "https://play.google.com/store/apps/details?id=com.app.selfaware",
+    web: "",
   },
+
+  // {
+  //   title: "Uzhavan Online",
+  //   description:
+  //     "E-commerce grocery platform with real-time inventory, cart management, and order tracking.",
+  //   tags: ["Flutter", "REST API", "State Management"],
+  //   app: "#",
+  //   web: "#",
+  // },
   {
-    title: "Retrieve Contacts App",
+    title: "Betting App",
     description:
-      "Utility app that encodes contacts into JSON format for backup and migration purposes.",
-    tags: ["Flutter", "Local Storage", "JSON"],
-    demo: "#",
-    github: "#",
+      "Custom calendar implementation, wallet integration, and responsive navigation for betting platform.",
+    tags: ["Flutter", "Custom UI", "Payment Gateway"],
+    app: "https://github.com/ragulsarma/flutter-bet-app-UI",
+    web: "",
   },
+
+   {
+    title: "XMPP chat demo app",
+    description:
+      "Developed a Flutter mobile application enabling users to connect to an XMPP server, securely login, and engage in single or group chats.",
+    tags: ["Flutter", "Local Storage", "XMPP"],
+    app: "https://github.com/ragulsarma/xampp_chat_demo_app",
+    web: "",
+  },
+
+  // {
+  //   title: "Retrieve Contacts App",
+  //   description:
+  //     "Utility app that encodes contacts into JSON format for backup and migration purposes.",
+  //   tags: ["Flutter", "Local Storage", "JSON"],
+  //   demo: "#",
+  //   github: "#",
+  // },
 ];
 
 export const Projects = () => {
   return (
-    <Section id="projects" title="Featured Projects" subtitle="WHAT I'VE BUILT">
+    <Section id="projects" title="Work & Projects" subtitle="WHAT I'VE BUILT">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <div
@@ -64,7 +100,7 @@ export const Projects = () => {
           >
             {/* Gradient border effect */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-xl blur opacity-20 group-hover:opacity-75 transition duration-500"></div>
-            
+
             <div className="relative bg-card border border-border rounded-xl overflow-hidden h-full flex flex-col">
               {/* Project image placeholder with gradient */}
               <div className="relative h-48 bg-gradient-to-br from-primary/20 via-accent/20 to-primary/20 overflow-hidden">
@@ -83,8 +119,10 @@ export const Projects = () => {
                 <h3 className="text-2xl font-bold mb-3 group-hover:text-gradient transition-all duration-300">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-4 flex-1 line-clamp-3">{project.description}</p>
-                
+                <p className="text-muted-foreground mb-4 flex-1 line-clamp-3">
+                  {project.description}
+                </p>
+
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag, idx) => (
                     <span
@@ -95,24 +133,29 @@ export const Projects = () => {
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="flex gap-3 pt-4 border-t border-border">
-                  {project.github && (
+                  {project.web && (
                     <a
-                      href={project.github}
+                      href={project.web}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-secondary hover:bg-primary text-secondary-foreground hover:text-primary-foreground rounded-lg transition-all duration-300 group/btn"
                     >
-                      <Github className="w-4 h-4 group-hover/btn:rotate-12 transition-transform" />
-                      <span className="font-medium">Code</span>
+                      <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                      {/* <Github className="w-4 h-4 group-hover/btn:rotate-12 transition-transform" /> */}
+                      <span className="font-medium">Web</span>
                     </a>
                   )}
-                  {project.demo && (
+                  {project.app && (
                     <a
-                      href={project.demo}
+                      href={project.app}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-primary text-primary-foreground rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 group/btn"
                     >
                       <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                      <span className="font-medium">Demo</span>
+                      <span className="font-medium">App</span>
                     </a>
                   )}
                 </div>
