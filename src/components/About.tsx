@@ -85,7 +85,7 @@ export const About = () => {
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
             <div className="relative bg-card border border-border rounded-lg p-8 h-full">
               <div className="absolute -top-4 left-8 bg-gradient-to-r from-primary to-accent text-primary-foreground px-6 py-2 rounded-full text-sm font-bold shadow-lg">
-                2010 - 2014
+                2014 - 2017
               </div>
               <h4 className="text-2xl font-bold mt-4 mb-3 group-hover:text-gradient transition-all duration-300">
                 Bachelor of Science
@@ -103,7 +103,7 @@ export const About = () => {
             <div className="absolute -inset-0.5 bg-gradient-to-r from-accent to-primary rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
             <div className="relative bg-card border border-border rounded-lg p-8 h-full">
               <div className="absolute -top-4 left-8 bg-gradient-to-r from-accent to-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-bold shadow-lg">
-                2015 - 2020
+                Distance Education
               </div>
               <h4 className="text-2xl font-bold mt-4 mb-3 group-hover:text-gradient transition-all duration-300">
                 Bachelor of Law
